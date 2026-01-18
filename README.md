@@ -21,7 +21,7 @@ _I made this site to showcase a few personal projects of mine as well as documen
   Add a link to get support, GitHub status page, code of conduct, license link.
 -->
 
-[Links][Github](https://github.com/Hemachander65) &bull; [LinkedIn](https://www.linkedin.com/hemachanderrubeshkumar) &bull; [Contact Email](hemachanderrubeshkumar@gmail.com) &bull;
+[Links] [Github](https://github.com/Hemachander65) &bull; [LinkedIn](https://www.linkedin.com/hemachanderrubeshkumar) &bull; [Contact Email](hemachanderrubeshkumar@gmail.com)
 
 &copy; 2025 Hemachander Rubeshkumar &bull; [MIT License](https://gh.io/mit)
 

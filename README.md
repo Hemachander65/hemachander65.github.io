@@ -7,7 +7,7 @@
   Add your open source license, GitHub uses MIT license.
 -->
 
-# Welcome to my website's GitHub Pages repository!/
+# Welcome to my website's GitHub Pages repository!
 _I made this site to showcase a few personal projects of mine as well as document the work, challenges, and lessons gained from them._
 
 </header>

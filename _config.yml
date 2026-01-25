@@ -2,7 +2,7 @@ remote_theme: abhinavs/moonwalk
 
 plugins:
   - jekyll-feed
-  - jekyll-soopr-seo-tag
+  - jekyll-seo-tag
 
 theme_config:
   appearance: "dark" # can be "light", "dark" or "auto"
@@ -34,4 +34,5 @@ highlighter: rouge
 
 sass:
   style: :compressed
+
 

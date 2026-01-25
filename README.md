@@ -12,8 +12,6 @@ _I made this site to showcase a few personal projects of mine as well as documen
 
 </header>
 
-
-
 <footer>
 
 <!--

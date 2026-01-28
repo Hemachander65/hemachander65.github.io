@@ -71,27 +71,27 @@ Info.json handles more of the highlevel information, such as author, microcontro
 */
 /* LAYOUT [QMK]
 
-		{Left-Hand}
-		   [1][2][3][4][5][6] (Reads Left Column Pins)
-		WMWMWMWMWMWMWMWMWMWMWMWM
-[1]		MWM[+][+][+][+][+][+]WMW
-[2]		WMW[+][+][+][+][+][+]MWM
-[3]		MWM[+][+][+][+][+][+]WMW
-[4]		WMW[+][+][+][+][+][+]MWM
-[5]		MWMWMWMWM[+][+][+][+]WMW
-[6]			WMWMWMWMWMWMWM[+]MWM
-					   WMWMWMWMW
+	{Left-Hand}
+		[1][2][3][4][5][6] (Reads Left Column Pins)
+	    WMWMWMWMWMWMWMWMWMWMWMWM
+[1]	    MWM[+][+][+][+][+][+]WMW
+[2]	    WMW[+][+][+][+][+][+]MWM
+[3]	    MWM[+][+][+][+][+][+]WMW
+[4]	    WMW[+][+][+][+][+][+]MWM
+[5]	    MWMWMWMWM[+][+][+][+]WMW
+[6]         WMWMWMWMWMWMWM[+]MWM
+                       WMWMWMWMW
 
-		{Right-Hand}
-		   [1][2][3][4][5][6] (Reads Right Column Pins)
-		WMWMWMWMWMWMWMWMWMWMWMWM
+	{Right-Hand}
+		[1][2][3][4][5][6] (Reads Right Column Pins)
+	    WMWMWMWMWMWMWMWMWMWMWMWM
 [7]		MWM[+][+][+][+][+][+]WMW
 [8]		WMW[+][+][+][+][+][+]MWM
 [9]		MWM[+][+][+][+][+][+]WMW
 [10]	WMW[+][+][+][+][+][+]MWM
 [11]	MWM[+][+][+][+]WMWWMWMWM
 [12]	MWM[+]WMWWMWMWMWMWMW
-		MWMWMWMWM
+	    MWMWMWMWM
 */
 
 //Note: Rows 1-6 are defined as Left Rows, and Rows 7-14 are defined as Right Rows

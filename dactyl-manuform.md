@@ -62,78 +62,6 @@ Info.json handles more of the highlevel information, such as author, microcontro
 ### Config.h
 The config.h file handles toggling certain features and handles important logic for the split keyboard. For both halves of the keyboard to communicate, they are connected to each other through a TRRS cable, which in my case, is operating through serial. This uses the bitbang driver. Both halves of the board have common power and ground (connected through the TRRS jacks and cables on both sides) as well as an assigned digital pin. This pin is defined in config.h. Additionally, the diode matrix and wires are all defined here as well. 
 
- 
- ```
- /* LAYOUT [REALITY]
-
-	{Left-Hand}						{Right-Hand}
-	WMWMWMWMWMWMWMWMWMWMWMWM		WMWMWMWMWMWMWMWMWMWMWMWM
-	MWM[+][+][+][+][+][+]WMW		MWM[+][+][+][+][+][+]WMW
-	WMW[+][+][+][+][+][+]MWM		WMW[+][+][+][+][+][+]MWM
-	MWM[+][+][+][+][+][+]WMW		MWM[+][+][+][+][+][+]WMW
-	WMW[+][+][+][+][+][+]MWM		WMW[+][+][+][+][+][+]MWM
-	MWMWMWMWM[+][+][+][+]WMW		MWM[+][+][+][+]WMWMWMWMW
-	    WMWMW[+][+][+][+]MWM		WMW[+][+][+][+]MWMWM
-	    MWMWMWMWMWMWMW[+]WMW		MWM[+]MWMWMWMWMWMWMW
-	               MWMWMWMWM		WMWMWMWMW
-
-*/
-/* LAYOUT [QMK]
-
-	{Left-Hand}
-		[1][2][3][4][5][6] (Reads Left Column Pins)
-	    WMWMWMWMWMWMWMWMWMWMWMWM
-[1]	    MWM[+][+][+][+][+][+]WMW
-[2]	    WMW[+][+][+][+][+][+]MWM
-[3]	    MWM[+][+][+][+][+][+]WMW
-[4]	    WMW[+][+][+][+][+][+]MWM
-[5]	    MWMWMWMWM[+][+][+][+]WMW
-[6]         WMWMWMWMWMWMWM[+]MWM
-                       WMWMWMWMW
-
-	{Right-Hand}
-		[1][2][3][4][5][6] (Reads Right Column Pins)
-		WMWMWMWMWMWMWMWMWMWMWMWM
-[7] 	MWM[+][+][+][+][+][+]WMW
-[8] 	WMW[+][+][+][+][+][+]MWM
-[9] 	MWM[+][+][+][+][+][+]WMW
-[10]	WMW[+][+][+][+][+][+]MWM
-[11]	MWM[+][+][+][+]WMWWMWMWM
-[12]	MWM[+]WMWWMWMWMWMWMW
-		MWMWMWMWM
-*/
-
-//Note: Rows 1-6 are defined as Left Rows, and Rows 7-14 are defined as Right Rows
-
-/* Wiring according to numbers on PCB for ATMega32U4
-Columns Left:
-
- 4, 5, 6, 7, 8, 9
-D4,C6,D7,E6,B5,B4
-
-Rows Left:
-
-A1,A0,15,14,16,10
-F6,F7,B1,B3,B2,B6
-
-Columns Right:
-
- 4, 5, 6, 7, 8, 9
-D4,C6,D7,E6,B4,B5
-
-Rows Right:
-
-A1,A0,15,14,16,10
-F6,F7,B1,B3,B2,B6
-*/
-
-/* Define Matrix */
-#define MATRIX_ROWS 12 //QMK treats the RH side as connected to the same matrix as the LH
-#define MATRIX_COLS 6  //QMK uses the right side pin definitions for switches in rows 7-12
-
-#define MATRIX_COL_PINS { D4, C6, D7, E6, B4, B5 }
-#define MATRIX_ROW_PINS { F6, F7, B1, B3, B2, B6 }
- ```
 ![Config.h 1](/images/dactyl3a.png)
 ![Config.h 2](/images/dactyl3b.png)
 <div style="text-align: center;">
@@ -147,7 +75,7 @@ After properly setting up these “code snippets of Exodia”, we can finally co
   QMK MSYS output of the Final, Successful Compilation of Firmware
 </div>
 
-There are several setups for dealing with split keyboards, however the setup I went with for this board is to have QMK assume the USB is always connected to the left-half. Conveniently, this is an option where you can flash the same exact file onto both boards. To flash the boards, I simply disconnected the TRRS cable, and plugged in one microcontroller at a time, setting the toolbox to auto-flash, and using a bent wire to trigger a reset by shorting the reset and ground pins. Once one side was done, the other side was also flashed. To test that everything worked properly, I used QMK’s key tester online. (basically it logs the inputs, and you press all the keys on your keyboard to test.)
+There are several setups for dealing with split keyboards, however the setup I went with for this board is to have QMK assume the USB is always connected to the left-half. Conveniently, this is an option where you can flash the same exact file onto both boards. To flash the boards, I simply disconnected the TRRS cable, and plugged in one microcontroller at a time, setting the toolbox to auto-flash, and used a bent wire to trigger a reset by shorting the reset and ground pins. Once one side was done, the other side was also flashed. To test that everything worked properly, I used QMK’s key tester online. (basically it logs the inputs, and you press all the keys on your keyboard to test.)
  
 ![Info.json](/images/dactyl5.png)
 <div style="text-align: center;">

@@ -76,7 +76,3 @@ footer_entries:
 #          - title: it is easy to use, see _data/home.yml to see how to configure it.
 #            url: false
 
-{% assign image_files = site.static_files | where: "image", true %}
-  {% for myimage in image_files %}
-    {{ myimage.path }}
-  {% endfor %}

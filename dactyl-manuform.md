@@ -156,4 +156,9 @@ My first test revealed some poor solder joints and other errors, but after clean
 
 ## Conclusion
 There was quite a lot I got to explore through completing this, soldering, writing firmware outside of arduino, sourcing components, etc. But I really did learn a lot, and having a solid completed project I have actually used for weeks, and knowing how it works well enough to fix or improve it however I want is really empowering.
-s
+
+DEBUGGING:
+{% assign image_files = site.static_files | where: "image", true %}
+  {% for myimage in image_files %}
+    {{ myimage.path }}
+  {% endfor %}

@@ -64,9 +64,9 @@ Info.json handles more of the highlevel information, such as author, microcontro
 	MWM[+][+][+][+][+][+]WMW		MWM[+][+][+][+][+][+]WMW
 	WMW[+][+][+][+][+][+]MWM		WMW[+][+][+][+][+][+]MWM
 	MWMWMWMWM[+][+][+][+]WMW		MWM[+][+][+][+]WMWMWMWMW
-		WMWMW[+][+][+][+]MWM		WMW[+][+][+][+]MWMWM
-		MWMWMWMWMWMWMW[+]WMW		MWM[+]MWMWMWMWMWMWMW
-				   MWMWMWMWM		WMWMWMWMW
+	   WMWMW[+][+][+][+]MWM		WMW[+][+][+][+]MWMWM
+	   MWMWMWMWMWMWMW[+]WMW		MWM[+]MWMWMWMWMWMWMW
+	            MWMWMWMWM		WMWMWMWMW
 
 */
 /* LAYOUT [QMK]
@@ -79,8 +79,8 @@ Info.json handles more of the highlevel information, such as author, microcontro
 [3]	    MWM[+][+][+][+][+][+]WMW
 [4]	    WMW[+][+][+][+][+][+]MWM
 [5]	    MWMWMWMWM[+][+][+][+]WMW
-[6]         WMWMWMWMWMWMWM[+]MWM
-                       WMWMWMWMW
+[6]        WMWMWMWMWMWMWM[+]MWM
+                    WMWMWMWMW
 
 	{Right-Hand}
 		[1][2][3][4][5][6] (Reads Right Column Pins)
@@ -125,7 +125,7 @@ F6,F7,B1,B3,B2,B6
 #define MATRIX_COL_PINS { D4, C6, D7, E6, B4, B5 }
 #define MATRIX_ROW_PINS { F6, F7, B1, B3, B2, B6 }
  ```
-![Info.json](http://www.hemachander65.github.io/images/dactyl2/)
+![Info.json](https://www.hemachander65.github.io/images/dactyl2/)
 <div style="text-align: center;">
   Code snippet in info.json handling diode matrix
 </div>
@@ -133,8 +133,8 @@ F6,F7,B1,B3,B2,B6
 ### Config.h
 The config.h file handles toggling certain features and handles important logic for the split keyboard. For both halves of the keyboard to communicate, they are connected to each other through a TRRS cable, which in my case, is operating through serial. This uses the bitbang driver. Both halves of the board have common power and ground (connected through the TRRS jacks and cables on both sides) as well as an assigned digital pin. This pin is defined in config.h. Additionally, the diode matrix and wires are all defined here as well. 
 
-![Info.json](http://www.hemachander65.github.io/images/dactyl3a/)
-![Info.json](http://www.hemachander65.github.io/images/dactyl3b/)
+![Info.json](/images/dactyl3a/)
+![Info.json](/images/dactyl3b.png)
 <div style="text-align: center;">
   Code snippet in info.json handling diode matrix
 </div>
@@ -144,8 +144,8 @@ The config.h file handles toggling certain features and handles important logic 
 </div>
 
 After properly setting up these “code snippets of Exodia”, we can finally compile this into a hex file in QMK MSYS.`
-![Info.json](http://www.hemachander65.github.io/images/dactyl5a/)
-![Info.json](http://www.hemachander65.github.io/images/dactyl5b/)
+![Info.json](http://www.hemachander65.github.io/images/dactyl5a.png/)
+![Info.json](/images/dactyl5b)
 <div style="text-align: center;">
   QMK MSYS output of the Final, Successful Compilation of Firmware
 </div>

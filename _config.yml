@@ -29,7 +29,7 @@ theme_config:
 
 defaults:
   - scope:
-      path: "assets/img"
+      path: "images"
     values:
       image: true
 

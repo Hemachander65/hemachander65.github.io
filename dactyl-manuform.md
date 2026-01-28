@@ -39,7 +39,7 @@ After designing, generating case files, printing parts, sourcing components, and
 To program the keyboard with QMK, the final steps are to flash a compiled .hex file using the QMK Toolbox. To compile that .h file, you need a properly configured rules.mk file, keymap file (.json or .c), and a config.h file.
 
 Let’s start with the keymap file. QMK offers a lot of support and features, and using it to create firmware was fairly straightforward. There were a few key items that made this build a bit different than most boards however. Due to the specific configuration of keys I had chosen, a 5x6 dactyl manuform with 3 thumb keys, there weren’t exact pre-configured files I could directly copy. I would have to actually read through the documentation and write my own version to get this to function. Fortunately, I could look at similar layouts, such as a 5x6 dactyl manuform with 6 thumb keys. QMK offers a web-based configurator that generates a .json file, which stores key layout information. For my purposes however, I needed a .c version of this file. Fortunately, there is a command in QMK MSYS that handles this, and I was able to use the configuration tool, download the .json file, and convert it to a .c file. The reason I needed to do this was to implement the “()” key; ‘(‘ when pressed, ‘)’ when pressed with shift.  That extra logic couldn’t be implemented directly in the web configurator, but in the c code, manual “key overrides” could be used to implement this behavior. Once I had this converted .c file, I had to remove the extra keys from the thumb cluster add that extra key override logic, and it was good to go.
-![QMK Configurator](https://www.hemachander65.github.io/images/dactyl1.png)
+![QMK Configurator](/images/dactyl1.png)
 <div style="text-align: center;">
   QMK's Web Configurator Tool
 </div>
@@ -53,6 +53,15 @@ This was essential to implementing the ‘()’ key.
 
 ### Info.json
 Info.json handles more of the highlevel information, such as author, microcontroller, bootloader type, etc. It also handles logic concerning the diode matrix. Since not every “coordinate”, or column header and diode row combination, is utilized, there is a segment definiting which switches are used. This is used later in conjunction with the layout file to assign matrix coordinates with the proper “key”. 
+
+![Info.json](/images/dactyl2.png)
+<div style="text-align: center;">
+  Code snippet in info.json handling diode matrix
+</div>
+
+### Config.h
+The config.h file handles toggling certain features and handles important logic for the split keyboard. For both halves of the keyboard to communicate, they are connected to each other through a TRRS cable, which in my case, is operating through serial. This uses the bitbang driver. Both halves of the board have common power and ground (connected through the TRRS jacks and cables on both sides) as well as an assigned digital pin. This pin is defined in config.h. Additionally, the diode matrix and wires are all defined here as well. 
+
  
  ```
  /* LAYOUT [REALITY]
@@ -64,9 +73,9 @@ Info.json handles more of the highlevel information, such as author, microcontro
 	MWM[+][+][+][+][+][+]WMW		MWM[+][+][+][+][+][+]WMW
 	WMW[+][+][+][+][+][+]MWM		WMW[+][+][+][+][+][+]MWM
 	MWMWMWMWM[+][+][+][+]WMW		MWM[+][+][+][+]WMWMWMWMW
-	   WMWMW[+][+][+][+]MWM		WMW[+][+][+][+]MWMWM
-	   MWMWMWMWMWMWMW[+]WMW		MWM[+]MWMWMWMWMWMWMW
-	            MWMWMWMWM		WMWMWMWMW
+	    WMWMW[+][+][+][+]MWM		WMW[+][+][+][+]MWMWM
+	    MWMWMWMWMWMWMW[+]WMW		MWM[+]MWMWMWMWMWMWMW
+	               MWMWMWMWM		WMWMWMWMW
 
 */
 /* LAYOUT [QMK]
@@ -79,19 +88,19 @@ Info.json handles more of the highlevel information, such as author, microcontro
 [3]	    MWM[+][+][+][+][+][+]WMW
 [4]	    WMW[+][+][+][+][+][+]MWM
 [5]	    MWMWMWMWM[+][+][+][+]WMW
-[6]        WMWMWMWMWMWMWM[+]MWM
-                    WMWMWMWMW
+[6]         WMWMWMWMWMWMWM[+]MWM
+                       WMWMWMWMW
 
 	{Right-Hand}
 		[1][2][3][4][5][6] (Reads Right Column Pins)
-	    WMWMWMWMWMWMWMWMWMWMWMWM
-[7]		MWM[+][+][+][+][+][+]WMW
-[8]		WMW[+][+][+][+][+][+]MWM
-[9]		MWM[+][+][+][+][+][+]WMW
+		WMWMWMWMWMWMWMWMWMWMWMWM
+[7] 	MWM[+][+][+][+][+][+]WMW
+[8] 	WMW[+][+][+][+][+][+]MWM
+[9] 	MWM[+][+][+][+][+][+]WMW
 [10]	WMW[+][+][+][+][+][+]MWM
 [11]	MWM[+][+][+][+]WMWWMWMWM
 [12]	MWM[+]WMWWMWMWMWMWMW
-	    MWMWMWMWM
+		MWMWMWMWM
 */
 
 //Note: Rows 1-6 are defined as Left Rows, and Rows 7-14 are defined as Right Rows
@@ -125,40 +134,27 @@ F6,F7,B1,B3,B2,B6
 #define MATRIX_COL_PINS { D4, C6, D7, E6, B4, B5 }
 #define MATRIX_ROW_PINS { F6, F7, B1, B3, B2, B6 }
  ```
-![Info.json](https://www.hemachander65.github.io/images/dactyl2/)
-<div style="text-align: center;">
-  Code snippet in info.json handling diode matrix
-</div>
-
-### Config.h
-The config.h file handles toggling certain features and handles important logic for the split keyboard. For both halves of the keyboard to communicate, they are connected to each other through a TRRS cable, which in my case, is operating through serial. This uses the bitbang driver. Both halves of the board have common power and ground (connected through the TRRS jacks and cables on both sides) as well as an assigned digital pin. This pin is defined in config.h. Additionally, the diode matrix and wires are all defined here as well. 
-
-![Info.json](/images/dactyl3a/)
-![Info.json](/images/dactyl3b.png)
-<div style="text-align: center;">
-  Code snippet in info.json handling diode matrix
-</div>
-![Info.json](http://www.hemachander65.github.io/images/dactyl4/)
+![Config.h 1](/images/dactyl3a.png)
+![Config.h 2](/images/dactyl3b.png)
 <div style="text-align: center;">
   ASCII Art/Diagram comparing physical keyboard to firmware, and pin definitions in config.h
 </div>
 
 After properly setting up these “code snippets of Exodia”, we can finally compile this into a hex file in QMK MSYS.`
-![Info.json](http://www.hemachander65.github.io/images/dactyl5a.png/)
-![Info.json](/images/dactyl5)
+![Info.json](/images/dactyl4a.png)
+![Info.json](/images/dactyl4b.png)
 <div style="text-align: center;">
   QMK MSYS output of the Final, Successful Compilation of Firmware
 </div>
 
 There are several setups for dealing with split keyboards, however the setup I went with for this board is to have QMK assume the USB is always connected to the left-half. Conveniently, this is an option where you can flash the same exact file onto both boards. To flash the boards, I simply disconnected the TRRS cable, and plugged in one microcontroller at a time, setting the toolbox to auto-flash, and using a bent wire to trigger a reset by shorting the reset and ground pins. Once one side was done, the other side was also flashed. To test that everything worked properly, I used QMK’s key tester online. (basically it logs the inputs, and you press all the keys on your keyboard to test.)
  
-My first test revealed some poor solder joints and other errors, but after cleaning up my earlier solder work, I noticed that I was unable to program on the right half's pro-micro. I fortunately bought a set of 3, so I cut out the old controller and soldered in the new one. 
+![Info.json](/images/dactyl5.png)
+<div style="text-align: center;">
+  QMK Keytester Software
+</div>
+ 
+My first test revealed some poor solder joints and other errors, but after cleaning up my earlier solder work, I noticed that I was unable to program on the right half's pro-micro. I fortunately bought a set of 3, so I cut out the old controller and soldered in the new one, which got it fully functional.
 
 ## Conclusion
-There was quite a lot I got to explore through completing this, soldering, writing firmware outside of arduino, sourcing components, etc. But I really did learn a lot, and having a solid completed project I have actually used for weeks, and knowing how it works well enough to fix or improve it however I want is really empowering.
-
-DEBUGGING:
-{% assign image_files = site.static_files | where: "image", true %}
-  {% for myimage in image_files %}
-    {{ myimage.path }}
-  {% endfor %}
+There was quite a lot I got to explore through completing this, soldering, writing firmware outside of arduino, sourcing components, etc. But I really did learn a lot, and having a solid completed project I have actually used for weeks, and knowing how it works well enough to fix or improve it however I want is really empowering. I started this project in the summer after graduating highschool, and I never would have imagined completing 2 and half years later. This is because I would only take a look at it during extended breaks and something that was on the backburner.

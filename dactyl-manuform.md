@@ -145,7 +145,7 @@ The config.h file handles toggling certain features and handles important logic 
 
 After properly setting up these “code snippets of Exodia”, we can finally compile this into a hex file in QMK MSYS.`
 ![Info.json](http://www.hemachander65.github.io/images/dactyl5a.png/)
-![Info.json](/images/dactyl5b)
+![Info.json](/images/dactyl5)
 <div style="text-align: center;">
   QMK MSYS output of the Final, Successful Compilation of Firmware
 </div>

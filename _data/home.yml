@@ -10,9 +10,9 @@ project_entries:
     url: dactyl-manuform
     desc: A fully custom keyboard from scratch; handwired, ergonomic, and complete with custom QMK firmware
 
-  #- title: Project 2
-  #  url: overview-post
-  #  desc: Projects are shown in card layout
+  - title: Simulink Wind Turbine Model
+    url: turbine-simulink
+    desc: A simulink model of power generation of a model wind turbine
 
   #- title: Project 3
   #  url: overview-post

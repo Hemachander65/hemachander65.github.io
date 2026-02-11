@@ -30,10 +30,11 @@ To model the ability to code custom control algorithms onto the resistance, a co
 </div>
 
 ## Further considerations
-This model still seems to have some odd behaviors that need to be debugged
-The approximation in the Aerodynamics block can be improved
-There are many parameters in the PMSM block that need to be explored
-The competition has current limits and other electrical criteria that need to be checked 
-The pitching of the blades is not modelled yet (used for Phase 3 of power curve)
 
-# NOTE that this project is an active work-in-progress
+- This model still seems to have some odd behaviors that need to be debugged.
+- The approximation in the Aerodynamics block can be improved.
+- There are many parameters in the PMSM block that need to be explored.
+- The competition has current limits and other electrical criteria that need to be checked.
+- The pitching of the blades is not modelled yet (used for Phase 3 of power curve).
+
+### NOTE that this project is an active work-in-progress

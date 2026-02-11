@@ -5,9 +5,6 @@ navbar_entries:
   - title: Blog
     url: blog
 
-  - title: Portfolio
-    url: portfolio
-
 project_entries:
   - title: Dactyl Manuform
     url: dactyl-manuform

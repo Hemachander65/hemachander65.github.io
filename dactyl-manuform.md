@@ -3,6 +3,7 @@ layout: post
 author: Hemachander Rubeshkumar
 tags: [portfolio, completed, dactyl-manuform]
 permalink: /dactyl-manuform/
+title: Dactyl Manuform
 ---
 
 ## A project several years in the making

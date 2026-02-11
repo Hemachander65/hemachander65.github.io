@@ -86,3 +86,42 @@ My first test revealed some poor solder joints and other errors, but after clean
 
 ## Conclusion
 There was quite a lot I got to explore through completing this, soldering, writing firmware outside of arduino, sourcing components, etc. But I really did learn a lot, and having a solid completed project I have actually used for weeks, and knowing how it works well enough to fix or improve it however I want is really empowering. I started this project in the summer after graduating highschool, and I never would have imagined completing 2 and half years later. This is because I would only take a look at it during extended breaks and something that was on the backburner.
+
+## Gallery
+
+![Info.json](/images/dactyl-internals.jpg)
+<div style="text-align: center;">
+  A closer look at the soldering and internals of the Dactyl Manuform
+</div>
+A closer look at the soldering and internals of the Dactyl Manuform. The screws are fairly easy to access, and this makes repairability very convenient.
+
+
+![Info.json](/images/open-close-dactyl.jpg)
+<div style="text-align: center;">
+  Perspective View of the Completed Right Half, and the Internals of the Left Half of the Dactyl Manuform
+</div>
+Hopefully this shot helps illustrate the depth a bit better.
+
+![Info.json](/images/open-close-dactyl-side-side.jpg)
+<div style="text-align: center;">
+  An opened half of the keyboard next to a closed half, from the top down.
+</div>  
+A side-by-side showing the internals and the "user-facing interface," or closed half.
+
+![Info.json](/images/top-view-dactyl.jpg)
+<div style="text-align: center;">
+  Top-Down view of the full keyboard
+</div>
+A bird's eye view of the keyboard. The numpad keycaps on the right actually do match the numpad layer, which is pretty nice.
+
+![Info.json](/images/holding-dactyl.jpg)
+<div style="text-align: center;">
+  Right Half of Dactyl Manuform Held In-Front of the config.h File Used to Compile its Firmware
+</div>
+The code in the background was compiled into the firmware running on them right now!
+
+![Info.json](/images/perspective-dactyl.jpg)
+<div style="text-align: center;">
+    Perspective View of Completed Dactyl-Manuform Build
+</div>
+Look at those key wells. Made soldering a pain, but it was worth it in the end.

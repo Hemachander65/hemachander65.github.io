@@ -1,7 +1,3 @@
----
-layout: home
----
-
 navbar_entries:
   - title: About
     url: about

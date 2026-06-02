@@ -1,4 +1,4 @@
-remote_theme: abhinavs/moonwalk@v0.2.2
+remote_theme: abhinavs/moonwalk@ab37fa6265a8b78f203f203cbab71c0b3edbe400
 
 plugins:
   - jekyll-remote-theme

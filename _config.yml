@@ -9,6 +9,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-soopr-seo-tag
+  - jekyll-markdown-output
 
 theme_config:
   appearance: "dark"

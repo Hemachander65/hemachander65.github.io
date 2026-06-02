@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 3.9"
+gem "jekyll", "~> 4.3"
 gem "jekyll-remote-theme"
 gem "jekyll-feed"
 gem "jekyll-seo-tag"
@@ -9,3 +9,4 @@ gem "jekyll-soopr-seo-tag"
 gem "jekyll-markdown-output"
 gem "jekyll-llms-output"
 gem "kramdown-parser-gfm"
+gem "webrick", "~> 1.7"

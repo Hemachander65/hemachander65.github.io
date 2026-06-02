@@ -11,6 +11,7 @@ plugins:
   - jekyll-soopr-seo-tag
   - jekyll-markdown-output
   - jekyll-llms-output
+  - kramdown-parser-gfm
 
 theme_config:
   appearance: "dark"

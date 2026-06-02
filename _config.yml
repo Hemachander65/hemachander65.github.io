@@ -1,6 +1,7 @@
 remote_theme: abhinavs/moonwalk
 
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
 

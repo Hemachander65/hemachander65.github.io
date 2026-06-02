@@ -1,8 +1,8 @@
 url: "https://hemachander65.github.io"
 baseurl: ""
 
-remote_theme: abhinavs/moonwalk
-#@68c4de4
+theme: abhinavs-moonwalk
+remote_theme: abhinavs/moonwalk@68c4de4
 
 plugins:
   - jekyll-remote-theme

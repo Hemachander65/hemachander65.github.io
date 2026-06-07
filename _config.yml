@@ -32,12 +32,20 @@ theme_config:
   show_reading_time: true # show number of words and reading time in the blog posts
   show_tags: true # show tags in a blog posts
   show_progress_bar: true
+  show_back_to_top: true
+  show_post_nav: true
+  show_toc: true
+  show_footnote_tooltips: false
+  show_link_previews: true
   # options for "home" page
   home:
     title_projects: Portfolio
     title_misc_list: Details
     title_blog: Blog
     title_old_projects: Old Projects
+
+markdown_output:
+  collections: [posts]
 
 defaults:
   - scope:

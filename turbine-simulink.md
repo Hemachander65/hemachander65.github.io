@@ -29,6 +29,8 @@ To model the ability to code custom control algorithms onto the resistance, a co
     A complete plot from a Simulink Turbine simulation run
 </div>
 
+The following screenshots demonstrate the models simulated output with an MPPT algorithm:
+
 ## Further considerations
 
 - This model still seems to have some odd behaviors that need to be debugged.

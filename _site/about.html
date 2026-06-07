@@ -15,13 +15,15 @@
 <meta property="og:title" content="Hemachander Rubeshkumar" />
 <meta name="author" content="Hemachander Rubeshkumar" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:url" content="http://localhost:4000/about.html" />
+<meta name="description" content="Welcome to my portfolio site! I wanted a place to document all the cool projects I have worked on, and will work on in the future." />
+<meta name="twitter:description" property="og:description" content="Welcome to my portfolio site! I wanted a place to document all the cool projects I have worked on, and will work on in the future." />
+<meta property="og:url" content="http://localhost:4000/about" />
 <meta property="og:site_name" content="Hemachander Rubeshkumar" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Hemachander Rubeshkumar" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Hemachander Rubeshkumar"},"headline":"Hemachander Rubeshkumar","@type":"WebPage","url":"http://localhost:4000/about.html","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Hemachander Rubeshkumar"},"headline":"Hemachander Rubeshkumar","@type":"WebPage","url":"http://localhost:4000/about","description":"Welcome to my portfolio site! I wanted a place to document all the cool projects I have worked on, and will work on in the future.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Hemachander Rubeshkumar" />
@@ -81,7 +83,32 @@
 
   
 </head>
-<body><main class="page-content" aria-label="Content">
+<body><div class="progress-bar" aria-hidden="true"></div>
+<style>
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--links);
+    z-index: 100;
+    transition: width 50ms linear;
+  }
+</style>
+<script>
+(function() {
+  var bar = document.querySelector('.progress-bar');
+  window.addEventListener('scroll', function() {
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight > 0) {
+      bar.style.width = (scrollTop / docHeight * 100) + '%';
+    }
+  });
+})();
+</script>
+<main class="page-content" aria-label="Content">
       <div class="w">
         <a href="javascript:history.back()" class="back-link" aria-label="Go back">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

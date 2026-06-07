@@ -1,6 +1,3 @@
-show_projects: true
-show_misc_list: false
-
 navbar_entries:
   - title: About
     url: about

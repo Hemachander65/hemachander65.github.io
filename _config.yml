@@ -7,7 +7,7 @@ description: >
 
 permalink: /:slug
 
-#remote_theme: abhinavs/moonwalk
+theme: moonwalk
 
 plugins:
   - jekyll-feed

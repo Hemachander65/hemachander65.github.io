@@ -2,12 +2,12 @@ title: Hemachander Rubeshkumar
 author: Hemachander Rubeshkumar
 url: https://hemachander65.github.io
 baseurl: ""
-description: > 
+description: >
   Welcome to my portfolio site! I wanted a place to document all the cool projects I have worked on, and will work on in the future.
 
 permalink: /:slug
 
-remote_theme: abhinavs/moonwalk
+#remote_theme: abhinavs/moonwalk
 
 plugins:
   - jekyll-feed
@@ -52,9 +52,6 @@ defaults:
       path: "images"
     values:
       image: true
-
-soopr:
-  publish_token: "" # sign up at https://www.soopr.co to get your publish token and personalize share and reaction options
 
 highlighter: rouge
 

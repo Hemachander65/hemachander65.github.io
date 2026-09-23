@@ -14,14 +14,14 @@ project_entries:
     url: turbine-simulink
     desc: A simulink model of power generation of a model wind turbine
 
-  #- title: Project 3
-  #  url: overview-post
-  #  desc: You can control visibility from _config.yml file
+  - title: 27-bit Processor Design
+    url: 27-bit-arch
+    desc: A complete 27-bit architecture design for a MIPS-style processor, simulated in Verilog
 
-  #- title: Project 4
-  #  url: overview-post
-  #  desc: This project uses highlight markup, configured in _data/home.yml
-  #  highlight: WIP
+  - title: Axial Flux Generator
+    url: axial-flux-motor
+    desc: This page is not complete yet
+    highlight: WIP
 
   #- title: Project 5
   #  url: overview-post

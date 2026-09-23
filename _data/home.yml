@@ -17,6 +17,7 @@ project_entries:
   - title: 27-bit Processor Design
     url: 27-bit-arch
     desc: A complete 27-bit architecture design for a MIPS-style processor, simulated in Verilog
+    highlight: WIP
 
   - title: Axial Flux Generator
     url: axial-flux-motor
